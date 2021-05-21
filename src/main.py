@@ -31,5 +31,3 @@ class Unemployment:
         output = open(seriesId + '.txt','w')
         output.write (x.get_string())
         output.close()
-
-Unemployment(2019, 2020).load()

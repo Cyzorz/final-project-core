@@ -2,3 +2,4 @@ jupyter
 matplotlib
 requests
 prettytable
+ipython
