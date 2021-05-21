@@ -2,3 +2,5 @@ SUUR0000SA0.txt
 CUUR0000SA0.txt
 .ipynb_checkpoints
 main.cpython-38.pyc
+src/__pycache__/render.cpython-38.pyc
+src/__pycache__/unemployment.cpython-38.pyc
