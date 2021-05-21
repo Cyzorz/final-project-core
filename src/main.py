@@ -12,8 +12,8 @@ class Unemployment:
     def load(self):
         try:
             for dataSeries in self.json_data['Results']['series']:
-                    x=prettytable.PrettyTable(["series id","year","period","value","footnotes"])
-                    seriesId = dataSeries['seriesID']
+                    self.x=prettytable.PrettyTable(["series id","year","period","value","footnotes"])
+                    self.seriesId = dataSeries['seriesID']
                     for item in dataSeries['data']:
                         year = item['year']
                         period = item['period']
@@ -23,11 +23,11 @@ class Unemployment:
                             if footnote:
                                 footnotes = footnotes + footnote['text'] + ','
                         if 'M01' <= period <= 'M12':
-                            x.add_row([seriesId,year,period,value,footnotes[0:-1]])
+                            self.x.add_row([self.seriesId,year,period,value,footnotes[0:-1]])
         except KeyError:
             print("Ignoring daily request limit and displaying previous query results:")
             return
-
-        output = open(seriesId + '.txt','w')
-        output.write (x.get_string())
+    def display_table(self):
+        output = open(self.seriesId + '.txt','w')
+        output.write (self.x.get_string())
         output.close()
