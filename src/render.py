@@ -1,8 +1,10 @@
 from IPython.display import Image
 
 class Render:
-    def load(image, type):
+    def load(file, style=None):
         try:
-            return Image(filename = f"assets/{image}.{type}")
+            if style == "image":
+                return Image(filename = f"../assets/{file}")
+            return f"../assets/{file}"
         except FileNotFoundError:
-            return Image(filename = f"../assets/{image}.{type}")
+                print("ERROR: Could not locate image!")
