@@ -25,9 +25,17 @@ class Unemployment:
                         if 'M01' <= period <= 'M12':
                             self.x.add_row([self.seriesId,year,period,value,footnotes[0:-1]])
         except KeyError:
-            print("Ignoring daily request limit and displaying previous query results:")
+            print("ERROR: Could not locate a key. Has the daily query limit been reached?")
             return
+            
     def display_table(self):
-        output = open(self.seriesId + '.txt','w')
-        output.write (self.x.get_string())
-        output.close()
+        try: 
+            output = open(self.seriesId + '.txt','w')
+            output.write (self.x.get_string())
+            output.close()
+        except AttributeError:
+            print("ERROR: Could not find attribute, proceeding to display previous table:")
+        results = open('SUUR0000SA0.txt', 'r')
+        for result in results:
+            print(result)
+        results.close()
