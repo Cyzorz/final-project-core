@@ -6,3 +6,5 @@
 [Kiplinger](https://www.kiplinger.com/economic-forecasts/inflation)\
 [History](https://www.history.com/topics/21st-century/recession#:~:text=approached%2010%20percent.-,Causes%20of%20the%20Recession,are%20considered%20high%2Drisk%20loans.)\
 [BusinessInsider](https://www.businessinsider.com/what-caused-the-great-depression#:~:text=While%20the%20October%201929%20stock,contributed%20to%20the%20Great%20Depression.)
+[bls](https://www.bls.gov/news.release/pdf/cpi.pdf)
+[cnn](https://www.cnn.com/2021/03/11/politics/biden-sign-covid-bill/index.html)
