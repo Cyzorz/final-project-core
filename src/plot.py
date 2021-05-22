@@ -20,11 +20,11 @@ class Plot:
     def get_file(self):
         return self.dVal
 
-    def plot(self, x, y, xMax, yMax):
+    def plot(self, x, y, xMax, yMax, xMin=0, yMin=0):
         plt.scatter(x, y)
         plt.gcf().autofmt_xdate()
-        plt.gca().set_xlim(left=0, right=xMax)
-        plt.gca().set_ylim(bottom=0, top=yMax)
+        plt.gca().set_xlim(left=xMin, right=xMax)
+        plt.gca().set_ylim(bottom=yMin, top=yMax)
         plt.grid(True)
     
     def render_plot(self):
