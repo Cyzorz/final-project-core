@@ -4,3 +4,5 @@ requests
 prettytable
 ipython
 pandas
+ratelimit
+sphinx-togglebutton

@@ -30,7 +30,7 @@ class Unemployment:
                                 footnotes = footnotes + footnote['text'] + ','
                         if 'M01' <= period <= 'M12':
                             self.x.add_row([self.seriesId,year,period,value,footnotes[0:-1]])
-        except KeyError and AttributeError:
+        except KeyError and AttributeError and KeyError:
             print("ERROR: Could not locate a key. Has the daily query limit been reached?")
             return
             

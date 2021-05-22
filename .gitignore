@@ -7,3 +7,5 @@ src/__pycache__/unemployment.cpython-38.pyc
 src/__pycache__/plot.cpython-38.pyc
 src/__pycache__/api.cpython-38.pyc
 src/__pycache__/config.cpython-38.pyc
+.vscode/settings.json
+src/__pycache__/hide.cpython-38.pyc
