@@ -1,13 +1,19 @@
 import requests
 import json
 import prettytable
+from requests.models import Response
+from api import API
 
 class Unemployment:
+
     def __init__(self, startYear, endYear):
-        headers = {'Content-type': 'application/json'}
-        data = json.dumps({"seriesid": ['CUUR0000SA0','SUUR0000SA0'],"startyear":f"{str(startYear)}", "endyear":f"{str(endYear)}"})
-        p = requests.post('https://api.bls.gov/publicAPI/v2/timeseries/data/', data=data, headers=headers)
-        self.json_data = json.loads(p.text)
+        query = {"seriesid": ['CUUR0000SA0','SUUR0000SA0'],"startyear":f"{str(startYear)}", "endyear":f"{str(endYear)}"}
+        url = 'https://api.bls.gov/publicAPI/v2/timeseries/data/'
+        try:
+            response = API.call(query, url, 'application/json')
+            self.json_data = json.loads(response.text)
+        except:
+            print("ERROR: Automatic rate limit reached!")
 
     def load(self):
         try:
@@ -24,7 +30,7 @@ class Unemployment:
                                 footnotes = footnotes + footnote['text'] + ','
                         if 'M01' <= period <= 'M12':
                             self.x.add_row([self.seriesId,year,period,value,footnotes[0:-1]])
-        except KeyError:
+        except KeyError and AttributeError:
             print("ERROR: Could not locate a key. Has the daily query limit been reached?")
             return
             
